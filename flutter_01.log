@@ -1,0 +1,84 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter packages get
+
+## exception
+
+YamlException: Error on line 56, column 5: Expected a key while parsing a block mapping.
+    - family: Iransans
+    ^
+
+```
+#0      Parser._parseBlockMappingKey (package:yaml/src/parser.dart:448:5)
+#1      Parser._stateMachine (package:yaml/src/parser.dart:86:16)
+#2      Parser.parse (package:yaml/src/parser.dart:47:19)
+#3      Loader._loadMapping (package:yaml/src/loader.dart:171:23)
+#4      Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#5      Loader._loadMapping (package:yaml/src/loader.dart:165:19)
+#6      Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#7      Loader._loadDocument (package:yaml/src/loader.dart:62:20)
+#8      Loader.load (package:yaml/src/loader.dart:54:20)
+#9      loadYamlDocument (package:yaml/yaml.dart:51:25)
+#10     loadYamlNode (package:yaml/yaml.dart:42:5)
+#11     loadYaml (package:yaml/yaml.dart:34:5)
+#12     FlutterManifest.createFromString (package:flutter_tools/src/flutter_manifest.dart:42:28)
+<asynchronous suspension>
+#13     FlutterManifest.createFromPath (package:flutter_tools/src/flutter_manifest.dart:36:12)
+<asynchronous suspension>
+#14     FlutterProject._readManifest (package:flutter_tools/src/project.dart:120:60)
+<asynchronous suspension>
+#15     FlutterProject.fromDirectory (package:flutter_tools/src/project.dart:41:44)
+<asynchronous suspension>
+#16     FlutterProject.fromPath (package:flutter_tools/src/project.dart:56:58)
+#17     PackagesGetCommand.runCommand (package:flutter_tools/src/commands/packages.dart:83:61)
+<asynchronous suspension>
+#18     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:348:18)
+#19     _asyncThenWrapperHelper.<anonymous closure> (dart:async/runtime/libasync_patch.dart:77:64)
+#20     _rootRunUnary (dart:async/zone.dart:1132:38)
+#21     _CustomZone.runUnary (dart:async/zone.dart:1029:19)
+#22     _FutureListener.handleValue (dart:async/future_impl.dart:129:18)
+#23     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:642:45)
+#24     Future._propagateToListeners (dart:async/future_impl.dart:671:32)
+#25     Future._complete (dart:async/future_impl.dart:476:7)
+#26     _SyncCompleter.complete (dart:async/future_impl.dart:51:12)
+#27     _AsyncAwaitCompleter.complete.<anonymous closure> (dart:async/runtime/libasync_patch.dart:33:20)
+#28     _rootRun (dart:async/zone.dart:1124:13)
+#29     _CustomZone.run (dart:async/zone.dart:1021:19)
+#30     _CustomZone.bindCallback.<anonymous closure> (dart:async/zone.dart:947:23)
+#31     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#32     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#33     _runPendingImmediateCallback (dart:isolate/runtime/libisolate_patch.dart:114:13)
+#34     _RawReceivePortImpl._handleMessage (dart:isolate/runtime/libisolate_patch.dart:170:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel beta, v0.6.0, on Microsoft Windows [Version 10.0.14393], locale en-US)
+    • Flutter version 0.6.0 at F:\education1\Flutter_SDK\flutter
+    • Framework revision 9299c02cf7 (5 weeks ago), 2018-08-16 00:35:12 +0200
+    • Engine revision e3687f70c7
+    • Dart version 2.1.0-dev.0.0.flutter-be6309690f
+
+[!] Android toolchain - develop for Android devices (Android SDK 27.0.3)
+    • Android SDK at F:\education1\Android_SDK\sdk
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-27, build-tools 27.0.3
+    • ANDROID_HOME = F:\education1\Android_SDK\sdk
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_112-release-b06)
+    ✗ Android license status unknown.
+
+[✓] Android Studio (version 2.3)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
+    ✗ Dart plugin not installed; this adds Dart specific functionality.
+    • Java version OpenJDK Runtime Environment (build 1.8.0_112-release-b06)
+
+[✓] Connected devices (1 available)
+    • Google Nexus 5X, 7 1 0, API 25, 1080x1920 • 192.168.43.101:5555 • android-x86 • Android 7.1.1 (API 25)
+
+! Doctor found issues in 1 category.
+```
